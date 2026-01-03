@@ -1,0 +1,119 @@
+import WhatsAppButton from "./WhatsAppButton";
+import wipBrandHero from "@/assets/wip-brand-hero.jpeg";
+
+const HeroSection = () => {
+  return (
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-foreground">
+      {/* Dynamic background gradients */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-gradient-to-br from-foreground via-foreground to-secondary/20" />
+        <div className="absolute top-0 right-0 w-3/4 h-3/4 bg-gradient-radial from-primary/10 via-transparent to-transparent blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-gradient-radial from-secondary/20 via-transparent to-transparent blur-3xl" />
+      </div>
+      
+      {/* Animated checker patterns */}
+      <div className="absolute top-0 right-0 w-96 h-96 checker-pattern opacity-10 rotate-12 animate-float" />
+      <div className="absolute bottom-20 left-0 w-64 h-64 checker-pattern opacity-8 -rotate-6" />
+      
+      {/* Floating orbs */}
+      <div className="absolute top-32 left-20 w-4 h-4 bg-primary rounded-full animate-pulse-glow" />
+      <div className="absolute top-48 right-32 w-3 h-3 bg-secondary rounded-full opacity-80" />
+      <div className="absolute bottom-40 left-1/3 w-2 h-2 bg-accent rounded-full" />
+
+      <div className="container mx-auto px-6 py-20 relative z-10">
+        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+          {/* Left content */}
+          <div className="flex-1 text-center lg:text-left space-y-8">
+            {/* Tag */}
+            <div className="inline-flex items-center gap-3 px-5 py-2.5 bg-background/5 backdrop-blur-sm border border-background/10 rounded-full">
+              <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
+              <span className="text-sm font-medium text-background/80 uppercase tracking-widest">
+                Goa · Culture · Community
+              </span>
+            </div>
+
+            {/* Headline */}
+            <div className="space-y-2">
+              <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold leading-[0.9] text-background">
+                Wear
+                <br />
+                Your{" "}
+                <span className="relative inline-block">
+                  <span className="relative z-10 text-primary">Story.</span>
+                  <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 12" fill="none">
+                    <path d="M2 8C50 2 150 2 198 8" stroke="hsl(var(--primary))" strokeWidth="4" strokeLinecap="round" className="opacity-60"/>
+                  </svg>
+                </span>
+              </h1>
+            </div>
+            
+            <p className="text-lg md:text-xl text-background/60 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+              A slow-growing, culture-driven clothing café rooted in community and conscious design.
+            </p>
+
+            <div className="flex flex-col sm:flex-row items-center gap-6 justify-center lg:justify-start pt-4">
+              <WhatsAppButton size="lg" className="shadow-lg shadow-primary/30" />
+              <div className="flex items-center gap-4 text-sm text-background/50">
+                <span className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 bg-primary rounded-full" />
+                  Limited drops
+                </span>
+                <span className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 bg-secondary rounded-full" />
+                  Personal assistance
+                </span>
+              </div>
+            </div>
+          </div>
+
+          {/* Right image - Modern card style */}
+          <div className="flex-1 relative max-w-lg">
+            <div className="relative group">
+              {/* Glow effect */}
+              <div className="absolute -inset-1 bg-gradient-to-br from-primary/40 via-secondary/30 to-accent/40 rounded-3xl blur-xl opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
+              
+              {/* Image container with glassmorphism frame */}
+              <div className="relative bg-background/5 backdrop-blur-sm rounded-3xl p-3 border border-background/10">
+                <img 
+                  src={wipBrandHero}
+                  alt="WIP Clothing Café brand"
+                  className="rounded-2xl w-full object-cover aspect-[4/5]"
+                />
+                
+                {/* Overlay gradient */}
+                <div className="absolute inset-3 rounded-2xl bg-gradient-to-t from-foreground/60 via-transparent to-transparent pointer-events-none" />
+                
+                {/* Floating badge */}
+                <div className="absolute bottom-6 left-6 right-6">
+                  <div className="flex items-center justify-between">
+                    <div className="px-4 py-2 bg-primary text-primary-foreground rounded-full font-bold text-sm backdrop-blur-sm">
+                      Work in Progress ✨
+                    </div>
+                    <div className="px-3 py-2 bg-background/10 backdrop-blur-sm rounded-full text-background text-sm border border-background/20">
+                      Est. 2026
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Decorative elements */}
+              <div className="absolute -top-6 -right-6 w-24 h-24 border-2 border-primary/30 rounded-2xl rotate-12" />
+              <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-secondary/30 rounded-xl -rotate-6 backdrop-blur-sm" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom gradient fade */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-card to-transparent" />
+      
+      {/* Scroll indicator */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-background/40">
+        <span className="text-xs uppercase tracking-widest">Scroll</span>
+        <div className="w-px h-8 bg-gradient-to-b from-background/40 to-transparent" />
+      </div>
+    </section>
+  );
+};
+
+export default HeroSection;
